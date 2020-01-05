@@ -108,8 +108,8 @@ writeBin ('<':xs) = 1:0:1:(writeBin xs)
 writeBin ('[':xs) = 1:1:0:(writeBin xs)
 writeBin (']':xs) = 1:1:1:(writeBin xs)
 
-append :: Program -> Program -> Program
-append p q i = (p i)++(q i)
+parallel :: Program -> Program -> Program
+parallel p q i = (p i)++(q i)
 
 alter :: Program -> Program -> Program
 alter p q i = (p (odds i))++(q (evens i)) 
